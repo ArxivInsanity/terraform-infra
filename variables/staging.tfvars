@@ -1,0 +1,5 @@
+org="Arxiv-Insanity-staging"
+workspace-name="app-infra"
+gcp-project="arxiv-insanity-staging"
+gcp-region  = "us-west2"
+gcp-zone    = "us-west2-a"

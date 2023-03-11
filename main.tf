@@ -1,17 +1,17 @@
 terraform {
   cloud {
     hostname     = "app.terraform.io"
-    organization = "Arxiv-Insanity"
+    organization = var.org
     workspaces {
-      name = "app-infra"
+      name = var.workspace-name
     }
   }
 }
 
 provider "google" {
-  project = "arxiv-sanity-380223"
-  region  = "us-west2"
-  zone    = "us-west2-a"
+  project = var.gcp-project
+  region  = var.gcp-region
+  zone    = var.gcp-zone
 }
 
 resource "google_storage_bucket" "auto-expire" {
