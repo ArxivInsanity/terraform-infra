@@ -15,7 +15,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "auto-expire" {
-  name          = "arxiv-temp-123-bucket"
+  name          = "${var.project}-temp-123-bucket"
   location      = "US"
   force_destroy = true
 }
