@@ -1,7 +1,6 @@
 variable "project" {
   type        = string
   description = "The google cloud project name"
-  default     = "arxiv-sanity-380223"
 }
 
 variable "region" {
