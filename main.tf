@@ -13,3 +13,9 @@ provider "google" {
   region  = var.region
   zone    = var.zone
 }
+
+module "gke-cluster" {
+  source  = "./gke"
+  project = var.project
+  region  = var.region
+}
