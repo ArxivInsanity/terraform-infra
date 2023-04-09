@@ -14,8 +14,13 @@ provider "google" {
   zone    = var.zone
 }
 
+module "apis" {
+  source = "./apis"
+}
 module "gke-cluster" {
   source  = "./gke"
   project = var.project
   region  = var.region
+
+  depends_on = [module.apis]
 }

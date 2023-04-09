@@ -10,7 +10,6 @@ resource "google_container_cluster" "primary" {
 
   network    = google_compute_network.vpc.name
   subnetwork = google_compute_subnetwork.subnet.name
-  depends_on = [google_project_service.container]
 }
 
 # Separately Managed Node Pool
@@ -19,7 +18,6 @@ resource "google_container_node_pool" "primary_nodes" {
   location   = var.region
   cluster    = google_container_cluster.primary.name
   node_count = var.gke_num_nodes
-  depends_on = [google_project_service.container]
 
   node_config {
     oauth_scopes = [
