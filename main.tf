@@ -17,7 +17,7 @@ provider "google" {
 module "apis" {
   source = "./apis"
 }
-module "gke-cluster" {
+module "gke_cluster" {
   source  = "./gke"
   project = var.project
   region  = var.region
